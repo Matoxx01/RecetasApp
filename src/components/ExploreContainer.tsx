@@ -1,28 +1,56 @@
 import React from 'react';
-import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-function Example() {
-  return (
-    <>
-      <IonMenu contentId="main-content">
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Menu Content</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">This is the menu content.</IonContent>
-      </IonMenu>
-      <IonPage id="main-content">
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonMenuButton></IonMenuButton>
-            </IonButtons>
-            <IonTitle>Menu</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">Tap the button in the toolbar to open the menu.</IonContent>
-      </IonPage>
-    </>
-  );
-}
-export default Example;
+import {
+  IonApp,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonMenuButton,
+  IonContent,
+  IonMenu,
+  IonList,
+  IonItem,
+  IonLabel,
+} from '@ionic/react';
+import './App.css';
+
+const App: React.FC = () => (
+  <IonApp>
+    <IonMenu contentId="main-content">
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Menu</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonList>
+          <IonItem button>
+            <IonLabel>Iniciar sesión</IonLabel>
+          </IonItem>
+          <IonItem button>
+            <IonLabel>Configuración</IonLabel>
+          </IonItem>
+          <IonItem button>
+            <IonLabel>Sobre Nosotros</IonLabel>
+          </IonItem>
+        </IonList>
+      </IonContent>
+    </IonMenu>
+
+    <IonHeader>
+      <IonToolbar>
+        <IonButtons slot="start">
+          <IonMenuButton />
+        </IonButtons>
+        <IonTitle>Mi Aplicación</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+
+    <IonContent id="main-content">
+      <h1>Bienvenido a nuestra aplicación</h1>
+      <p>Contenido principal aquí.</p>
+    </IonContent>
+  </IonApp>
+);
+
+export default App;
